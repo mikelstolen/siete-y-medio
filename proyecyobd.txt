@@ -1,0 +1,38 @@
+DROP DATABASE IF EXISTS sieteymedio;
+CREATE DATABASE sieteymedio CHARACTER SET utf8mb4;
+USE sieteymedio;
+
+create table registrojugadores (
+	jugador varchar(10) not null primary key,
+	puntuacio_total int(4),
+	partidas_totales(4),
+	manos_ganadas int(4),
+	manos_perdidas int(4)
+);
+create table partida_jugada (
+	Ronda int auto_increment primary key,
+	Ganador varchar(10)
+);
+create table participiantes (
+	numeroronda int,
+	p_participante varchar(10)
+	g_participante varchar(10)
+	t_participante varchar(10)
+	q_participante varchar(10)
+	i_participante varchar(10)
+	x_participante varchar(10)
+	s_participante varchar(10)
+	o_participante varchar(10)
+	foreing key (numeroronda) references partida_jugada(Ronda)
+);
+create table ronda(
+	numeroronda int primary key,
+	jugador varchar(10) not null,
+	mano_inicial varchar(10),
+	puntos_inicio int(3),
+	apuesta int(3),
+	resultado varchar(10),
+	puntos_final int(3),
+	foreign key (numeroronda) references partida_jugada(Ronda),
+	foreign key (jugador) references registrojugadores(Jugador)
+);
