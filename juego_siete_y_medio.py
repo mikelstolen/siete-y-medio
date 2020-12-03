@@ -20,11 +20,27 @@ while salir is not True:
     print("SELECCIONA UN MODO DE JUEGO")
     menu_principal = int(input("1) MODO DE JUEGO MANUAL\n2) MODO DE JUEGO HUMANO CONTRA MAQUINA\n3) SALIR\nOPCIÓN: "))
     if menu_principal == 1:
+        c = 0
+        # LA VARIABLE CANTIDAD_DE_JUGADPRES SIRVER PARA QUE EL PROGRAMA SEPA LA CANTIDAD DE VUELTAS
+        # TIENE QUE HACER PARA RECOGER TODOS LOS JUGADROES.
         cantidad_de_jugadores = int(input("\n¿CUANTOS JUGADORES VAIS A JUGAR?\nCANTIDAD: "))
-        for c in range(0, cantidad_de_jugadores):
-            nombres_jugadores = input("\nINTRODUZCA EL NOMBRE DEL JUGADOR "+str(c+1)+" .\nJUGADORES: ")
-            jugadores.append(nombres_jugadores)
+        while c is not cantidad_de_jugadores:
+            nombres_jugadores = input("\nINTRODUZCA EL NOMBRE DEL JUGADOR "+str(c+1)+" ."
+                                      "\n-RECUERDA QUE EL NOMBRE DE JUGADO HA DE TENER SOLO UNA LETRA"
+                                      " Y SEGUIDA DE NUMEROS\nJUGADOR: ")
+            # LA SIGUENTE COMPARACIÓN  SIRVE PARA SABER SI LA PRIMERA LETRA ES UNA LETRA DEVUEL EL VALOR TRUE O FALSE
+            # LA FUNCIÓN isalpha()
+            if nombres_jugadores[0].isalpha() is False:
+                print("\n¡HA DE EMPEZAR POR UNA LETRA!\n")
+            else:
+                jugadores.append([nombres_jugadores])
+                c += 1
         print(jugadores)
+        for i in range(0,cantidad_de_jugadores):
+            for j in jugadores:
+                for x in j:
+                    repartir_carta = random.randint(0, len(mazo))
+                    
     elif menu_principal == 2:
         print("hola")
     elif menu_principal == 3:
