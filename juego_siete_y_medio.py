@@ -14,6 +14,8 @@ mazo = [(1, oro, 1), (2, oro, 2), (3, oro, 3), (4, oro, 4), (5, oro, 5,), (6, or
         (12, bastos, 0.5)]
 # JUGADORES EN LA SIGUENTE LISTA SE GUARDARAN A LOS JUGADORES
 jugadores = []
+jugadores_sin_orden = []
+dic_jugadores = {}
 # MENU DE SELECCIÓN DE MODO DE JUEGO
 salir = False
 while salir is not True:
@@ -33,14 +35,20 @@ while salir is not True:
             if nombres_jugadores[0].isalpha() is False:
                 print("\n¡HA DE EMPEZAR POR UNA LETRA!\n")
             else:
-                jugadores.append([nombres_jugadores])
+                # CADA VEZ QUE SE AÑADE UN NOMBRE QUE NO HAGA LA CONDICIÓN SE AÑADIRA COMO LISTA A LA LISTA JUGADORES
+                jugadores_sin_orden.append([nombres_jugadores])
                 c += 1
+        # ESTE BUCLE SIRVE PARA REPARTIR LAS CARTAS A CADA JUGADOR
+        i = 1
+        while i is not cantidad_de_jugadores+1:
+            jugadores_sin_orden[i-1].append(mazo[random.randint(0, len(mazo)-1)])
+            i += 1
+        # MÉTODO BURBUJA PARA ORDENAR LA LISTA
+        for i in range(len(jugadores_sin_orden) - 1):
+            for j in range(len(jugadores_sin_orden) - i - 1):
+                if matriz[j][j] > matriz[j + 1][j + 1]:
+                    matriz[j][j], matriz[j + 1][1] = matriz[j + 1][1], matriz[j][j]
         print(jugadores)
-        for i in range(0,cantidad_de_jugadores):
-            for j in jugadores:
-                for x in j:
-                    repartir_carta = random.randint(0, len(mazo))
-                    
     elif menu_principal == 2:
         print("hola")
     elif menu_principal == 3:
