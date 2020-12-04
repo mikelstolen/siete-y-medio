@@ -1,6 +1,6 @@
+import random
 # PRIORIDAD ES IGUAL A UN NUMERO DEL 1 AL 4
 # EN CASO DE EMPATE GANA EL JUGADOR QUE EL NUMERO DE PRIORIDAD SEA MAYOR
-import random
 oro = 4
 copas = 3
 espadas = 2
@@ -24,12 +24,13 @@ while salir is not True:
     if menu_principal == 1:
         c = 0
         # LA VARIABLE CANTIDAD_DE_JUGADPRES SIRVER PARA QUE EL PROGRAMA SEPA LA CANTIDAD DE VUELTAS
-        # TIENE QUE HACER PARA RECOGER TODOS LOS JUGADROES.
+        # TIENE QUE HACER PARA RECOGER TODOS LOS JUGADORES.
         cantidad_de_jugadores = int(input("\n¿CUANTOS JUGADORES VAIS A JUGAR?\nCANTIDAD: "))
         while c is not cantidad_de_jugadores:
-            nombres_jugadores = input("\nINTRODUZCA EL NOMBRE DEL JUGADOR "+str(c+1)+" ."
-                                      "\n-RECUERDA QUE EL NOMBRE DE JUGADO HA DE TENER SOLO UNA LETRA"
-                                      " Y SEGUIDA DE NUMEROS\nJUGADOR: ")
+            nombres_jugadores = input("\nINTRODUZCA EL NOMBRE DEL JUGADOR "+str(c+1)+"."
+                                      "\n-RECUERDA QUE EL NOMBRE DE JUGADO HA DE TENER SOLO UNA LETRA Y "
+                                      "NO PUEDE CONTENER ESPACIOS"
+                                      " Y SEGUIDA DE NUMEROS.\nJUGADOR: ")
             # LA SIGUENTE COMPARACIÓN  SIRVE PARA SABER SI LA PRIMERA LETRA ES UNA LETRA DEVUEL EL VALOR TRUE O FALSE
             # LA FUNCIÓN isalpha()
             if nombres_jugadores[0].isalpha() is False:
@@ -44,11 +45,14 @@ while salir is not True:
             jugadores_sin_orden[i-1].append(mazo[random.randint(0, len(mazo)-1)])
             i += 1
         # MÉTODO BURBUJA PARA ORDENAR LA LISTA
-        for i in range(len(jugadores_sin_orden) - 1):
-            for j in range(len(jugadores_sin_orden) - i - 1):
-                if matriz[j][j] > matriz[j + 1][j + 1]:
-                    matriz[j][j], matriz[j + 1][1] = matriz[j + 1][1], matriz[j][j]
-        print(jugadores)
+        # for i in range(len(jugadores_sin_orden) - 1):
+        #    for j in range(len(jugadores_sin_orden) - i - 1):
+        #        if jugadores_sin_orden[j][j] > jugadores_sin_orden[j + 1][j + 1]:
+        #            jugadores_sin_orden[j][j], jugadores_sin_orden[j + 1][j + 1] = jugadores_sin_orden[j + 1][j + 1]
+        #            , jugadores_sin_orden[j][j]
+        print(jugadores_sin_orden)
+        # print(jugadores)
+
     elif menu_principal == 2:
         print("hola")
     elif menu_principal == 3:
