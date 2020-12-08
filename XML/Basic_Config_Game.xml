@@ -1,0 +1,7 @@
+<Initial_Config>
+	<Num_Min_Players>1</Num_Min_Players>
+	<Num_Max_Players>8</Num_Max_Players>
+	<Num_Max_Rounds>30</Num_Max_Rounds>
+	<Num_Initial_Points>20</Num_Initial_Points>
+	<Is_Allowed_Auto_Mode>True</Is_Allowed_Auto_Mode>
+</Initial_Config>
