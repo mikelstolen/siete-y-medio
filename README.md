@@ -1,1 +1,0 @@
-# siete-y-medio
