@@ -10,9 +10,49 @@ PARTICIPANTES:
 
 # IMPORTS
 import random
+from Lectura_XML import cartas
+print(cartas)
+
+import pymysql
+# import pandas as pd
+from sqlalchemy import create_engine
+
+# Configuramos la BBDD
+
+# Conexión de base de datos
+host = "sieteymedio.cif7u0be4daj.us-east-1.rds.amazonaws.com"
+port = int(3306)
+# Usuario de la conexión
+user = "root"
+# Contraseña
+passwd = "Alumneroot"
+# Nombre de la base de datos a la cual nos vamos a conectar
+BBDD = "sieteymedio"
+
+db = pymysql.connect(host, port, user, passwd, BBDD)
+#db = create_engine('mysql+pymysql://' + user + ':' + passwd + '@' + host + ':' + str(port) + '/' + BBDD, echo=False)
+
+# Este cursor lo usamos para ejecutar la query y almacenar sus datos
+cursor = db.cursor()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # PRIORIDAD ES IGUAL A UN NUMERO DEL 1 AL 4
 # EN CASO DE EMPATE GANA EL JUGADOR QUE EL NUMERO DE PRIORIDAD SEA MAYOR
+"""
+
 oro = 4
 copas = 3
 espadas = 2
@@ -24,6 +64,7 @@ mazo = [(1, oro, 1), (2, oro, 2), (3, oro, 3), (4, oro, 4), (5, oro, 5,), (6, or
         (10, espadas, 0.5), (11, espadas, 0.5), (12, espadas, 0.5), (1, bastos, 1), (2, bastos, 2), (3, bastos, 3),
         (4, bastos, 4), (5, bastos, 5), (6, bastos, 6), (7, bastos, 7), (10, bastos, 0.5), (11, bastos, 0.5),
         (12, bastos, 0.5)]
+
 # JUGADORES EN LA SIGUENTE LISTA SE GUARDARAN A LOS JUGADORES
 jugadores = []
 jugadores_sin_orden = []
@@ -71,3 +112,5 @@ while salir is not True:
         salir = True
     else:
         print("\nSELECCIÓN NO VALIDA VUELVE A INTRODUCIR UN NUMERO\n")
+
+"""
