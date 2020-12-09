@@ -10,53 +10,54 @@ PARTICIPANTES:
 
 # IMPORTS
 import random
+
+# Lectura del archivo XML
 from Lectura_XML import cartas
 print(cartas)
 
-import pymysql
-# import pandas as pd
-from sqlalchemy import create_engine
+# Creación de la lista de palos
+palos = []
+palo = ""
+index = 0
+j = 0
 
-# Configuramos la BBDD
+for i in range(len(cartas)):
+    palo = cartas[i][2]
+    if len(palos) == 0:
+        if palo == 'Oros':
+            index += 1
+            palos.append([index, 4, palo])
+        if palo == 'Copas':
+            index += 1
+            palos.append([index + 1, 3, palo])
+        if palo == 'Espadas':
+            index += 1
+            palos.append([index + 1, 2, palo])
+        if palo == 'Bastos':
+            index += 1
+            palos.append([index, 1, palo])
+    while j in range(len(palos)):
+        if palo not in palos[j][2]:
+            if palo == 'Oros':
+                index += 1
+                palos.append([index, 4, palo])
+            if palo == 'Copas':
+                index += 1
+                palos.append([index, 3, palo])
+            if palo == 'Espadas':
+                index += 1
+                palos.append([index, 2, palo])
+            if palo == 'Bastos':
+                index += 1
+                palos.append([index, 1, palo])
+        else:
+            break
+        j += 1
 
-# Conexión de base de datos
-host = "sieteymedio.cif7u0be4daj.us-east-1.rds.amazonaws.com"
-port = int(3306)
-# Usuario de la conexión
-user = "root"
-# Contraseña
-passwd = "Alumneroot"
-# Nombre de la base de datos a la cual nos vamos a conectar
-BBDD = "sieteymedio"
-
-db = pymysql.connect(host, port, user, passwd, BBDD)
-#db = create_engine('mysql+pymysql://' + user + ':' + passwd + '@' + host + ':' + str(port) + '/' + BBDD, echo=False)
-
-# Este cursor lo usamos para ejecutar la query y almacenar sus datos
-cursor = db.cursor()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-# PRIORIDAD ES IGUAL A UN NUMERO DEL 1 AL 4
-# EN CASO DE EMPATE GANA EL JUGADOR QUE EL NUMERO DE PRIORIDAD SEA MAYOR
+print(palos)
 """
-
-oro = 4
-copas = 3
-espadas = 2
-bastos = 1
 mazo = [(1, oro, 1), (2, oro, 2), (3, oro, 3), (4, oro, 4), (5, oro, 5,), (6, oro, 6), (7, oro, 7), (10, oro, 0.5),
         (11, oro, 0.5), (12, oro, 0.5), (1, copas, 1), (2, copas, 2), (3, copas, 3), (4, copas, 4), (5, copas, 5),
         (6, copas, 6), (7, copas, 7), (10, copas, 0.5), (11, copas, 0.5), (12, copas, 0.5), (1, espadas, 1),
@@ -64,7 +65,6 @@ mazo = [(1, oro, 1), (2, oro, 2), (3, oro, 3), (4, oro, 4), (5, oro, 5,), (6, or
         (10, espadas, 0.5), (11, espadas, 0.5), (12, espadas, 0.5), (1, bastos, 1), (2, bastos, 2), (3, bastos, 3),
         (4, bastos, 4), (5, bastos, 5), (6, bastos, 6), (7, bastos, 7), (10, bastos, 0.5), (11, bastos, 0.5),
         (12, bastos, 0.5)]
-
 # JUGADORES EN LA SIGUENTE LISTA SE GUARDARAN A LOS JUGADORES
 jugadores = []
 jugadores_sin_orden = []
@@ -105,12 +105,10 @@ while salir is not True:
         #            , jugadores_sin_orden[j][j]
         print(jugadores_sin_orden)
         # print(jugadores)
-
     elif menu_principal == 2:
         print("hola")
     elif menu_principal == 3:
         salir = True
     else:
         print("\nSELECCIÓN NO VALIDA VUELVE A INTRODUCIR UN NUMERO\n")
-
 """
