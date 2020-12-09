@@ -1,0 +1,94 @@
+* {
+	margin: 10px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.padre {
+	display: flex;
+	flex-flow: column nowrap
+}
+	.header {
+		background: black;
+		display: flex;
+		flex-flow: column nowrap;
+
+	}
+	.menu {
+		display: flex;
+		flex-flow: row nowrap;
+	}
+		.logo {
+			background: green;
+			flex: 1 1 auto;
+		}
+			.img {
+				background: yellow;
+				flex: 1 1 auto;
+				height: 50***px;
+			}
+		.social {
+			background: green;
+			flex: 2 2 auto;
+		}
+			.titulo{
+				background: yellow;
+				flex: 2 2 auto;
+				height: 50px;
+			}
+	.section {
+		background: black;
+		display: flex;
+		flex-flow: row wrap;
+	}
+		.side {
+			flex: 1 1 auto;
+			background: green;
+		}
+			.navegacion {
+				background: yellow;
+			}
+		.articulos {
+			flex: 2 1 auto;
+			background: green;
+			display: flex;
+			flex-direction: column;
+
+		}
+			.articulos1 {
+				background: yellow;
+			}
+	.footer {
+		background: black;
+	}
+		.pie {
+			background: green;
+			display: flex;
+			justify-content: center;
+		}
+			.textopie {
+				background-color: yellow;
+				width: 300px
+			}
+@media all and (max-width: 800px){
+	.section {
+		flex-direction: column;
+	}
+	.menu {
+		flex-direction: column;
+		height: auto;
+	}
+	.side {
+		display: flex;
+		justify-content: center;
+	}
+}
+@media all and (max-width: 800px){
+	.articulos {
+		flex-direction: column;
+	}
+}
+@media all and (max-width: 800px){
+	.side {
+		flex-direction: column;
+	}
+}
