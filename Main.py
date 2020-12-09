@@ -36,7 +36,7 @@ for i in range(len(cartas)):
         if palo == 'Bastos':
             index += 1
             palos.append([index, 1, palo])
-    while j in range(len(palos)) or len(palos) == 0:
+    while j in range(len(palos)):
         if palo not in palos[j][2]:
             if palo == 'Oros':
                 index += 1
@@ -65,7 +65,6 @@ mazo = [(1, oro, 1), (2, oro, 2), (3, oro, 3), (4, oro, 4), (5, oro, 5,), (6, or
         (10, espadas, 0.5), (11, espadas, 0.5), (12, espadas, 0.5), (1, bastos, 1), (2, bastos, 2), (3, bastos, 3),
         (4, bastos, 4), (5, bastos, 5), (6, bastos, 6), (7, bastos, 7), (10, bastos, 0.5), (11, bastos, 0.5),
         (12, bastos, 0.5)]
-
 # JUGADORES EN LA SIGUENTE LISTA SE GUARDARAN A LOS JUGADORES
 jugadores = []
 jugadores_sin_orden = []
@@ -106,12 +105,10 @@ while salir is not True:
         #            , jugadores_sin_orden[j][j]
         print(jugadores_sin_orden)
         # print(jugadores)
-
     elif menu_principal == 2:
         print("hola")
     elif menu_principal == 3:
         salir = True
     else:
         print("\nSELECCIÓN NO VALIDA VUELVE A INTRODUCIR UN NUMERO\n")
-
 """
