@@ -1,6 +1,6 @@
 Siete y medio
 
-Proyecto del juego, siete y medio, para jugar con amigos en local, y contra bots.
+Proyecto del juego, siete y medio, para jugar con amigos en local.
 
 Para Python3.
 
