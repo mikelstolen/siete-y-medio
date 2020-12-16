@@ -16,3 +16,8 @@ Si se quiere ejecutar desde Windows, abrir un cmd en la ubicación del archivo q
 
 	Ubuntu 
 Para ejecutar desde un terminal Ubuntu, escribir python3 para ejecutar python, y añadimos el nombre del archivo es decir: “python3 Main.py” y se ejecutara el programa desde terminal.
+
+Angela Hincapié correo: ahincapiemorales.cf@iesesteveterradas.cat
+
+Miguel Hurtado correo: mhurtadodiaz.cf@iesesteveterradas.cat Instagram: @Mikel_Stolen Twitter: @SwitchingStarxD Sergio de la Torre correo: 
+sdelatorresergio.cg@iesesteveterradas.cat Instagram: @sergio_rins
