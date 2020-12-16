@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title></title>
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+ <body>
+     <table border="1">
+         <caption>SELECT distinct u.username , concat(c.numero_carta,' ',t.descripcion) as Carta_inicial FROM proyecto.turnos t1 join proyecto.usuario as u on t1.idparticipante = u.idusuario join proyecto.cartas as c on c.idcartas = t1.carta_inicial join proyecto.tipo_carta as t on t.idtipo_carta = c.tipo WHERE carta_inicial = (select carta_inicial from proyecto.turnos t2 where t1.idparticipante = t2.idparticipante group by carta_inicial order by count(*) desc limit 1 );</caption>
+         <thead>
+           <tr>
+             <th>username</th>
+             <th>Carta_inicial</th>
+           </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <td>Leandro</td>
+                 <td>2 Oros</td>
+             </tr>
+             <tr>
+                 <td>Rafa</td>
+                 <td>3 Oros</td>
+             </tr>
+             <tr>
+                 <td>Belen</td>
+                 <td>4 Oros</td>
+             </tr>
+             <tr>
+                 <td>Jenni</td>
+                 <td>5 Oros</td>
+             </tr>
+             <tr>
+                 <td>Jordi</td>
+                 <td>12 Oros</td>
+             </tr>
+             <tr>
+                 <td>Xavi</td>
+                 <td>4 Copas</td>
+             </tr>
+             <tr>
+                 <td>Lluis</td>
+                 <td>7 Copas</td>
+             </tr>
+            </tbody>
+         </table>
+ </body>
+</html>

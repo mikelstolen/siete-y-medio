@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<mydata>
+  <row>
+       <username>Leandro</username>
+       <Carta_inicial>2 Oros</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Rafa</username>
+       <Carta_inicial>3 Oros</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Belen</username>
+       <Carta_inicial>4 Oros</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Jenni</username>
+       <Carta_inicial>5 Oros</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Jordi</username>
+       <Carta_inicial>12 Oros</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Xavi</username>
+       <Carta_inicial>4 Copas</Carta_inicial>
+
+  </row>
+  <row>
+       <username>Lluis</username>
+       <Carta_inicial>7 Copas</Carta_inicial>
+
+  </row>
+</mydata>
