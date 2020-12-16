@@ -28,5 +28,6 @@ Para ejecutar desde un terminal Ubuntu, escribir python3 para ejecutar python, y
 
 
 Angela Hincapié     correo: ahincapiemorales.cf@iesesteveterradas.cat    
-Miguel Hurtado      correo: mhurtadodiaz.cf@iesesteveterradas.cat       Instagram: @Mikel_Stolen    Twitter: @SwitchingStarxD
+Miguel Hurtado      correo: mhurtadodiaz.cf@iesesteveterradas.cat      
+		    Instagram: @Mikel_Stolen    Twitter: @SwitchingStarxD
 Sergio de la Torre  correo: sdelatorresergio.cg@iesesteveterradas.cat   Instagram: @sergio_rins 
