@@ -19,12 +19,16 @@
 	}
 		.logo {
 			background: green;
-			flex: 1 1 auto;
+			flex: 0 1 auto;
+			height: auto;
+			width: auto;
 		}
 			.img {
 				background: yellow;
 				flex: 1 1 auto;
-				height: 50***px;
+				height: 50**px;
+				max-width: 101px;
+				max-height: 50px;
 			}
 		.social {
 			background: green;
@@ -34,18 +38,24 @@
 				background: yellow;
 				flex: 2 2 auto;
 				height: 50px;
+				text-align: center;
 			}
 	.section {
 		background: black;
 		display: flex;
 		flex-flow: row wrap;
+		flex-direction: row;
 	}
 		.side {
 			flex: 1 1 auto;
 			background: green;
+			flex-direction: column;
+			display: flex;
+			
 		}
 			.navegacion {
 				background: yellow;
+				max-width: 210px;
 			}
 		.articulos {
 			flex: 2 1 auto;
@@ -56,18 +66,21 @@
 		}
 			.articulos1 {
 				background: yellow;
+				max-width: 855px;
+				border-style: solid;
+	border-radius: 10px;
 			}
 	.footer {
 		background: black;
 	}
 		.pie {
-			background: green;
+			background: yellow;
 			display: flex;
-			justify-content: center;
+			justify-content: left;
 		}
 			.textopie {
 				background-color: yellow;
-				width: 300px
+				width: 90%;
 			}
 @media all and (max-width: 800px){
 	.section {
@@ -91,4 +104,19 @@
 	.side {
 		flex-direction: column;
 	}
+}
+.titulo_tabla {
+	text-decoration: underline;
+	font-family: "Times New Roman", Times, serif;
+}
+table {
+	text-align: center;
+	margin: 0 auto;
+}
+p {
+	text-align: center;
+}
+.textopie_1{
+	font-size: 60%;
+	text-align: center;
 }
