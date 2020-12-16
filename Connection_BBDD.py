@@ -239,7 +239,7 @@ def searching_user():
         counter = 0
         if trobat:
             print("Usuario encontrado {}!!!".format(username))
-            return trobat
+            return result[index][0]
         else:
             print("Lo sentimos el usuario {} no ha sido encontrado!!!".format(username))
     except pymysql.err.ProgrammingError:

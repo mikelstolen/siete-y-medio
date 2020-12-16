@@ -281,11 +281,21 @@ while not flag_menuPrincipal:
             cantidad_de_jugadores = int(input("¿Añade cantidad de jugadores: "))
             # Añadimos las cartas activas
             cartaActiva = []
-            for i in (0, len(cartas)):
+            cartaInicial = []
+            i= 0
+            while i < len(cartas):
                 if cartas[i][4] == 'SI':
                     cartaActiva.append(cartas[i])
-            for j in (0, cantidad_de_jugadores):
-                cartaInicial = random.choice(cartaActiva)
+                i += 1
+            j = 0
+            print(cartaActiva)
+            while j < cantidad_de_jugadores:
+                aleatorio = random.randint(0, 39)
+                print(aleatorio)
+                cartaInicial.append((cartaActiva[aleatorio]))
+                cartaActiva.pop(aleatorio)
+                j += 1
+
             # Añadimos primero al jugador logueado
             jugadores_sin_orden.append((logged_user, cartaInicial[0]))
             # Añadir el resto de jugadores
@@ -293,19 +303,16 @@ while not flag_menuPrincipal:
                 jugadores = Connection_BBDD.searching_user()
                 jugadores_sin_orden.append((jugadores, cartaInicial[counter]))
                 counter += 1
-            print(jugadores_sin_orden)
-            mazo = creacion_mazo_prioridad()
+            print("1", jugadores_sin_orden)
+            mazo = creacion_mazo_prioridad(cartaActiva)
+            max = '0'
+            for k in range(len(jugadores_sin_orden)):
+                if max < jugadores_sin_orden[k][1][3]:
+                    max = jugadores_sin_orden[k][1][3]
+                    index = k
 
-            for k in range(len(jugadores_sin_orden-1)):
-                for l in range(len(jugadores_sin_orden) - k - 1):
-                    if jugadores_sin_orden[j][1][3] > jugadores_sin_orden[j+1][1][3]:
-                        jugadores_sin_orden[j], jugadores_sin_orden[j+1] = jugadores_sin_orden[j+1], jugadores_sin_orden[j]
-
-
-
-
-            print(jugadores_sin_orden)
-            # print(jugadores)
+            print("La banca es el juegador {}: ".format(jugadores_sin_orden[index][0]))
+            
             """
         elif submenu_principal == 2:
             print("_" * 70)
