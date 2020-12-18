@@ -325,7 +325,7 @@ def searching_player(logged_user):
                 sup = medio - 1
         counter = 0
         if trobat:
-            print("Jugador encontrado {}!!!".format(id_usuario))
+            print("Jugador encontrado!!!")
             usuario = result[index][0]
             return usuario
         else:

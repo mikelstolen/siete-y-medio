@@ -10,13 +10,13 @@ PARTICIPANTES:
 
 # IMPORTS
 import Connection_BBDD
+import carta
 import random
+# Lectura del archivo XML
+from Lectura_XML import cartas
 
 # Llamo al archivo de conexión de la BBDD
 Connection_BBDD.coneccion_BBDD()
-
-# Lectura del archivo XML
-from Lectura_XML import cartas
 
 # Variables flags
 flag_menuPrincipal, flag_menuUsuarioR, flag_menuJuegoNormal, flag_menuJuegoBots, flag_menuUsuarioNR, \
@@ -27,53 +27,8 @@ jugadores_sin_orden = []
 dic_jugadores = {}
 logged_user = []
 
-# FUNCIONES
-
-
-# Creación de la lista del mazo con prioridad
-def creacion_mazo_prioridad(cartas):
-    # Creación de la lista de palos
-    palos = []
-    # palo = ""
-    index = 0
-    j = 0
-
-    for i in range(len(cartas)):
-        palo = cartas[i][2]
-        if len(palos) == 0:
-            if palo == 'Oros':
-                index += 1
-                palos.append([index, 4, palo])
-            if palo == 'Copas':
-                index += 1
-                palos.append([index + 1, 3, palo])
-            if palo == 'Espadas':
-                index += 1
-                palos.append([index + 1, 2, palo])
-            if palo == 'Bastos':
-                index += 1
-                palos.append([index, 1, palo])
-        while j in range(len(palos)):
-            if palo not in palos[j][2]:
-                if palo == 'Oros':
-                    index += 1
-                    palos.append([index, 4, palo])
-                if palo == 'Copas':
-                    index += 1
-                    palos.append([index, 3, palo])
-                if palo == 'Espadas':
-                    index += 1
-                    palos.append([index, 2, palo])
-                if palo == 'Bastos':
-                    index += 1
-                    palos.append([index, 1, palo])
-            else:
-                break
-            j += 1
-    return palos
-
 print(cartas)
-print(creacion_mazo_prioridad(cartas))
+
 # MENU PRINCIPAL FUNCIONES GENERALES
 while not flag_menuPrincipal:
     print("_" * 70)
@@ -129,7 +84,7 @@ while not flag_menuPrincipal:
             print("{:^70}".format("LOGGING"))
             print("_" * 70)
             logged_user = Connection_BBDD.loggin_user()
-            print(logged_user)
+            #print(logged_user)
             if logged_user is None:
                 res = input("Deseas registrarte como usuario? S or N")
                 if res.lower() == 's':
@@ -278,22 +233,29 @@ while not flag_menuPrincipal:
             print("{:^70}".format("MODO DE JUEGO NORMAL: JUGADORES HUMANOS"))
             print("_" * 70)
             counter = 1
-            cantidad_de_jugadores = int(input("¿Añade cantidad de jugadores: "))
+            # Comprobamos que se añada la cantidad permitida de jugadores
+            cantidad_de_jugadores = int(input("Añade cantidad de jugadores: "))
+            while cantidad_de_jugadores > 7:
+                cantidad_de_jugadores = int(input("Error: Cantidad MAX de Jugadores permitidos 8, incluyendote a ti!!!!"
+                                                  "\nAñade cantidad de jugadores: "))
+
             # Añadimos las cartas activas
             cartaActiva = []
             cartaInicial = []
-            i= 0
+            i = 0
             while i < len(cartas):
                 if cartas[i][4] == 'SI':
                     cartaActiva.append(cartas[i])
                 i += 1
+            # Asignamos las cartas iniciales aleatoriamente a todos los jugadores
             j = 0
-            print(cartaActiva)
-            while j < cantidad_de_jugadores:
-                aleatorio = random.randint(0, 39)
-                print(aleatorio)
+            longitud = (len(cartaActiva))
+            while j < cantidad_de_jugadores+1:
+                aleatorio = random.randint(0, longitud-1)
+                # print(aleatorio)
                 cartaInicial.append((cartaActiva[aleatorio]))
                 cartaActiva.pop(aleatorio)
+                longitud -= 1
                 j += 1
 
             # Añadimos primero al jugador logueado
@@ -303,22 +265,27 @@ while not flag_menuPrincipal:
                 jugadores = Connection_BBDD.searching_user()
                 jugadores_sin_orden.append((jugadores, cartaInicial[counter]))
                 counter += 1
-            print("1", jugadores_sin_orden)
-            mazo = creacion_mazo_prioridad(cartaActiva)
-            max = '0'
-            for k in range(len(jugadores_sin_orden)):
-                if max < jugadores_sin_orden[k][1][3]:
-                    max = jugadores_sin_orden[k][1][3]
-                    index = k
 
-            print("La banca es el juegador {}: ".format(jugadores_sin_orden[index][0]))
-            
+            print("\tUSUARIO\t\tCARTA INICIAL")
+            for i in range(len(jugadores_sin_orden)):
+                print("\t{}\t\t\t{}".format(jugadores_sin_orden[i][0], jugadores_sin_orden[i][1]))
+            # Llamamos a la función creación mazo para
+            #mazo = creacion_mazo_prioridad(cartaActiva)
+            preseleccion = []
+
+            for x in range(len(jugadores_sin_orden)):
+                preseleccion.append(jugadores_sin_orden[x][1][3])
+            jugador = carta.carta_mayor(jugadores_sin_orden, preseleccion)
+
+            print("La banca es el jugador {}: ".format(jugador))
+
             """
         elif submenu_principal == 2:
             print("_" * 70)
             print("{:^70}".format("MODO DE JUEGO AUTOMÁTICO: JUGADOR HUMANO CONTRA BOTS"))
             print("_" * 70)
             input("Presione ENTER para continuar....")
+            """
         elif submenu_principal == 3:
             input("Presione ENTER para continuar....")
             flag_submenuPrincipal = True
@@ -326,4 +293,3 @@ while not flag_menuPrincipal:
         else:
             print("Opción no valida!!!")
             input("Presione ENTER para continuar....")
-        """
