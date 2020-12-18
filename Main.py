@@ -27,7 +27,7 @@ jugadores_sin_orden = []
 dic_jugadores = {}
 logged_user = []
 
-print(cartas)
+# print(cartas)
 
 # MENU PRINCIPAL FUNCIONES GENERALES
 while not flag_menuPrincipal:
@@ -159,15 +159,19 @@ while not flag_menuPrincipal:
             print("{:^70}".format("INFORME CARTA INICIAL MAS REPETIDA"))
             print("_" * 70)
             import carta_Inicial
-            input("Presione ENTER para continuar....")
+            input("Informe generado!!!. Presione ENTER para continuar....")
         elif menu_Informes == 2:
             print("_" * 70)
-            print("{:^70}".format("INFORMES"))
+            print("{:^70}".format("INFORME - JUGADOR CON LA APUESTA MÁS ALTA"))
             print("_" * 70)
+            import apuesta_Alta
+            input("Informe generado!!!. Presione ENTER para continuar....")
         elif menu_Informes == 3:
             print("_" * 70)
-            print("{:^70}".format("INFORMES"))
+            print("{:^70}".format("INFORME - JUGADOR CON LA APUESTA MAS BAJA"))
             print("_" * 70)
+            import apuesta_Baja
+            input("Informe generado!!!. Presione ENTER para continuar....")
         elif menu_Informes == 4:
             print("_" * 70)
             print("{:^70}".format("INFORMES"))
@@ -252,7 +256,6 @@ while not flag_menuPrincipal:
             longitud = (len(cartaActiva))
             while j < cantidad_de_jugadores+1:
                 aleatorio = random.randint(0, longitud-1)
-                # print(aleatorio)
                 cartaInicial.append((cartaActiva[aleatorio]))
                 cartaActiva.pop(aleatorio)
                 longitud -= 1
@@ -269,8 +272,6 @@ while not flag_menuPrincipal:
             print("\tUSUARIO\t\tCARTA INICIAL")
             for i in range(len(jugadores_sin_orden)):
                 print("\t{}\t\t\t{}".format(jugadores_sin_orden[i][0], jugadores_sin_orden[i][1]))
-            # Llamamos a la función creación mazo para
-            #mazo = creacion_mazo_prioridad(cartaActiva)
             preseleccion = []
 
             for x in range(len(jugadores_sin_orden)):

@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<mydata>
+  <row>
+       <idpartida>1</idpartida>
+       <username>Belen</username>
+       <apuesta>17.00</apuesta>
+
+  </row>
+  <row>
+       <idpartida>2</idpartida>
+       <username>Jordi</username>
+       <apuesta>10.00</apuesta>
+
+  </row>
+  <row>
+       <idpartida>3</idpartida>
+       <username>Jordi</username>
+       <apuesta>2.00</apuesta>
+
+  </row>
+  <row>
+       <idpartida>4</idpartida>
+       <username>Rafa</username>
+       <apuesta>2.00</apuesta>
+
+  </row>
+  <row>
+       <idpartida>5</idpartida>
+       <username>Rafa</username>
+       <apuesta>2.00</apuesta>
+
+  </row>
+</mydata>

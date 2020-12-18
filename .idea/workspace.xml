@@ -2,12 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7c149ed-0252-450d-b3f6-6ee0c0b6f751" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/DOCS/Presentacionproyectodeff.odp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DOCS/Presentacionproyectodeff.pptx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/HTML/ResultadoQuery_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/XML/Resultadoquery_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apuesta_Alta.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apuesta_Baja.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/carta.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/carta_Inicial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Connection_BBDD.py" beforeDir="false" afterPath="$PROJECT_DIR$/Connection_BBDD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HTML/proyectohtml.html" beforeDir="false" afterPath="$PROJECT_DIR$/HTML/proyectohtml.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Main.py" beforeDir="false" afterPath="$PROJECT_DIR$/Main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/carta_Repetida.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +41,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="G:/Mi unidad/programacio/Python/pythonProject" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.Main">
